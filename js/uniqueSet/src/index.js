@@ -1,8 +1,8 @@
-var uniqueSet = function (list) {
+function uniqueSet (list) {
   var interator = list || this
-  let map = {}
-  let set = []
-  let index = 0
+  var map = {}
+  var set = []
+  var index = 0
 
   for (index; index < interator.length; index++) {
     if (!map.hasOwnProperty(interator[index])) {

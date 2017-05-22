@@ -23,11 +23,11 @@ In the JavaScript implementation we take advantage of an objects properties whic
 With a large data set this is probably better suited for a Node.js environment as opposed to being run in the browser.  Though I was surprised to see how quickly modern browsers handled a list of 100,000 entries.
 
 ``` javascript
-var uniqueSet = function (list) {
+function uniqueSet (list) {
   var interator = list || this
-  let map = {}
-  let set = []
-  let index = 0
+  var map = {}
+  var set = []
+  var index = 0
 
   for (index; index < interator.length; index++) {
     if (!map.hasOwnProperty(interator[index])) {
