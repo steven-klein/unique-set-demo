@@ -2,6 +2,10 @@
 
 > Demonstration site verifying requirements of the UniqueSet function
 
+## Live Demo
+
+A live demo using the function in the browser can be seen [here](https://uniqueset.now.sh/).
+
 ## Running Tests
 
 Variants of the function were written in JavaScript, Java, and Elixir, with the live demo using the JavaScript implementation.
