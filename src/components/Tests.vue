@@ -6,15 +6,12 @@
 
 <script>
 
-import orderedSet from './../../data/ordered.json'
-import largeSet from './../../data/large.json'
-
 export default {
   name: 'tests',
   data () {
     return {
-      orderedSet,
-      largeSet
+      orderedSet: window.orderedSet,
+      largeSet: window.largeSet
     }
   }
 }

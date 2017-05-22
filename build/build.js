@@ -16,8 +16,6 @@ spinner.start()
 rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
   if (err) throw err
 
-  //TODO: inject sample data in index file. 
-
   webpack(webpackConfig, function (err, stats) {
     spinner.stop()
     if (err) throw err

@@ -36,3 +36,8 @@ createSampleData('ordered', null, ordered, null);
 createSampleData('ordered', 'txt', ordered, null);
 createSampleData('large', null, null);
 createSampleData('large', 'txt', null);
+
+(function (ordered) {
+  var data = `window.orderedSet = ${JSON.stringify(ordered)};\nwindow.largeSet = ${JSON.stringify(randomList(100000))};\n`
+  fs.writeFileSync('./static/data.js', data)
+})(ordered)
