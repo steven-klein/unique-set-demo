@@ -10,13 +10,13 @@ By adding items to a new list as we go, we're able to maintain the original orde
 
 Iterating over the input list (n) times should allows us to stay well under 1 second when n = 100,000.  Giving us a linear runtime efficiency  of O(n).
 
-### Additional Considerations 
+### Additional Considerations
 
-Depending on the source and reliability of the input data we may need to also consider the case where addresses may exists with varying letter cases: STEVEN@example.com, steven@example.com, steven@EXAMPLE.COM.  These implementations do not check against this and makes the assumption the input data as been normalized in some way and they would all be considered unique.
+Depending on the source and reliability of the input data we may need to also consider the case where addresses may exists with varying letter cases: ``STEVEN@example.com``, ``steven@example.com``, ``steven@EXAMPLE.COM``.  These implementations do not check against this and makes the assumption the input data as been normalized in some way and they would all be considered unique.
 
 From my knowledge few if any email providers enforce case sensitivity on the mailbox name, so if we did want to check against this, we should just convert the case of the string to all lowercase before checking if it exists in the set.
 
-### JavaScript 
+### JavaScript
 
 In the JavaScript implementation we take advantage of an objects properties which must be unique by creating a new default object and adding the email address as a property when it doesn't already exist.  The @ symbol should mean we can avoid collisions with built in properties.
 
@@ -40,7 +40,7 @@ var uniqueSet = function (list) {
 }
 ```
 
-### Java 
+### Java
 
  For the Java implementation our input data is a LinkedList and we use the HashSet structure for avoiding duplicates in our new LinkedList.
 
@@ -71,7 +71,7 @@ class UniqueSet {
 }
 ```
 
-### Elixir 
+### Elixir
 
 I chose to also implement this in Elixir for my own personal benefit as it's a language that I'd like to have some knowledge of.  Being a functional language we're required to use recursion to solve the problem of removing duplicates.  Similar to having multiple constructors that accept varying arguments in some Object Oriented languages Elixir employs the same concept to functions.
 
