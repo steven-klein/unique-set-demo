@@ -14,9 +14,11 @@ describe('List', function() {
   describe('Time', function() {
     it('Should complete execution in under 1 second where the list has a length of 100,000 with 50% random duplicates.', function() {
         var start = now();
+        var end = null;
+        var executionTime = null;
         uniqueSet(largeData);
-        var end = now();
-        var executionTime = (end-start).toFixed(3);
+        end = now();
+        executionTime = (end-start).toFixed(3);
         // executionTime expressed in milliseconds.  1 sec = 1000 milliseconds
         assert(executionTime < 1000);
     });

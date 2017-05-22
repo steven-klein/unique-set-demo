@@ -1,0 +1,27 @@
+.button {
+  display: inline-block;
+  border: 2px solid #ff674d;
+  background-color: #ff674d;
+  color: white;
+  border-radius: 42px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  line-height: 1.35;
+  font-weight: bold;
+  font-style: normal;
+  text-align: center;
+  padding: 4px 28px 5px;
+  transition-property: background-color, border, color, opacity;
+  transition-duration: 200ms;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &[disabled="disabled"] {
+    background-color: #a0a0a0;
+    border-color: #a0a0a0;
+  }
+}
