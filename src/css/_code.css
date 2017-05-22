@@ -1,0 +1,71 @@
+/* _code.css */
+code {
+  background: #f3f3f3;
+  border-radius: 2px;
+  color: #444;
+  font-family: 'Fira Mono', monospace;
+  font-size: .85em;
+  margin: 0 .2em;
+  padding: .1em .5em;
+}
+
+pre {
+  background: #f3f3f3;
+  font-family: 'Fira Mono', monospace;
+  margin-bottom:  1.9rem;
+  padding: calc(.5 *  1.9rem) 1.2rem;
+  tab-size: 4;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+pre code {
+  background: none;
+  border: none;
+  color: #444;
+  margin: 0;
+  padding: 0;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #aaa;
+}
+
+.token.operator,
+.token.punctuation {
+  color: #888;
+}
+
+.token.selector,
+.token.attr-name,
+.token.entity,
+.token.url {
+  color: #987;
+}
+
+.token.tag,
+.token.constant,
+.token.keyword {
+  color: #a7a;
+}
+
+.token.function,
+.token.attr-value {
+  color: #68a;
+}
+
+.token.number,
+.token.boolean,
+.token.regex,
+.token.string {
+  color: #6a8;
+}
+
+.token.variable,
+.token.property,
+.token.key {
+  color: #a66;
+}
