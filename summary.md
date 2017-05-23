@@ -1,24 +1,24 @@
 # Summary  
 
-The resulting function has been implemented use three programming languages: JavaScript, Java, and Elixir.  With this demo using the JavaScript implementation.  They all solve the problem using the same methods:  Iterate through each item in the list, check if it exists in a set, and if not add it to the set and a new list.  Then return the new list.  The full source code for this demo page as well as the function implementations and tests can be found [here](https://github.com/steven-klein/unique-set-demo) where you can run additional tests against the Java and Elixir implementations.
+The resulting function has been implemented using three programming languages: JavaScript, Java, and Elixir, with this demo using the JavaScript implementation.  They all solve the problem using the same methods:  Iterate through each item in the list, check if it exists in a map or set, and if not add it to the map or set and the new list. The full source code for this demo page, the function implementations, and cli tests can be found [here](https://github.com/steven-klein/unique-set-demo) CLI tests are available for all three implementations if you have the required dependencies installed.
 
 ### Data Structures and Logic
 
-Using a set (Map, HashSet etc.) is useful when we are trying to guarantee uniqueness.  Depending on the implementation it will not allow duplicate keys or values.  Email addresses are inherently unique and can act as the key or be hashed for a unique key.
+Using a map or set is useful when we are trying to remove duplicates since in one case it requires unique keys, and in the other unique values. Email addresses are inherently unique and can act as a key in a map.
 
 By adding items to a new list as we go, we're able to maintain the original order of the input list.
 
-Iterating over the input list (n) times should allows us to stay well under 1 second when n = 100,000.  Giving us a linear runtime efficiency  of O(n).
+The efficiency requirement should be met by a function with linear runtime O(n).
 
 ### Additional Considerations
 
-Depending on the source and reliability of the input data we may need to also consider the case where addresses may exists with varying letter cases: ``STEVEN@example.com``, ``steven@example.com``, ``steven@EXAMPLE.COM``.  These implementations do not check against this and makes the assumption the input data as been normalized in some way and they would all be considered unique.
+Depending on the source and reliability of the input data we may need to also consider the case where email addresses may exists with varying letter cases: ``STEVEN@example.com``, ``steven@example.com``, ``steven@EXAMPLE.COM``.  The implementations here do not check against this and makes the assumption the input data as been normalized in some way, in which case, each of those addresses would be considered unique.
 
-From my knowledge few if any email providers enforce case sensitivity on the mailbox name, so if we did want to check against this, we should just convert the case of the string to all lowercase before checking if it exists in the set.
+From my knowledge, few email providers enforce case sensitivity on the mailbox name, so if we did want to check against this, we should first convert the address string to all lowercase before any additional logic.
 
 ### JavaScript
 
-In the JavaScript implementation we take advantage of an objects properties which must be unique by creating a new default object and adding the email address as a property when it doesn't already exist.  The @ symbol should mean we can avoid collisions with built in properties.
+In the JavaScript implementation we take advantage of an objects map like properties which must be unique by creating a new default object and adding the email address as a property when it doesn't already exist.  The @ symbol should mean we can avoid collisions with built in properties.
 
 With a large data set this is probably better suited for a Node.js environment as opposed to being run in the browser.  Though I was surprised to see how quickly modern browsers handled a list of 100,000 entries.
 
@@ -73,9 +73,9 @@ class UniqueSet {
 
 ### Elixir
 
-I chose to also implement this in Elixir for my own personal benefit as it's a language that I'd like to have some knowledge of.  Being a functional language we're required to use recursion to solve the problem of removing duplicates.  Similar to having multiple constructors that accept varying arguments in some Object Oriented languages Elixir employs the same concept to functions.
+I chose to also implement this in Elixir, for my own personal benefit, as it's a language that I'd like to have some working knowledge of.  Being a functional language we're required to use recursion to solve the problem of removing duplicates.  Similar to having multiple constructors that accept varying arguments, in some Object Oriented languages, Elixir employs the same concept to functions.
 
-Aside from the use of recursion, the problem is solved using the same methods as the JavaScript and Java implementations.
+Aside from the use of recursion, the problem is solved using a similar method as the JavaScript and Java implementations, using a Map to avoid duplicates and building a new list as we iterate.
 
 ``` elixir
 defmodule UniqueSet do

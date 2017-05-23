@@ -17,12 +17,15 @@ In order to run all tests, you will need need to have a [Java Runtime Environmen
 yarn test
 
 # run the JavaScript tests
+# path to function: ./js/uniqueSet/src/index.js
 yarn run test:js
 
 # build and run the Java tests
+# path to function: ./java/UniqueSet.java
 yarn run test:java
 
 # build and run the Elixir tests
+# path to function: ./elixir/UniqueSet/lib/UniqueSet.ex
 yarn run test:elixir
 ```
 
