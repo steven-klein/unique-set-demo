@@ -1,10 +1,5 @@
-import Vue from 'vue'
+import m from 'mithril'
 import App from './App'
 
-Vue.config.productionTip = false
-
 /* eslint-disable no-new */
-new Vue({
-  el: '#app',
-  render: h => h(App)
-})
+m.render(document.querySelector('#app'), m(App))
